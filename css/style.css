@@ -20,3 +20,9 @@
   	padding-top: 30px;
   	padding-left: 30px;
   }
+  @media(max-width: 500px){
+  	.posts{
+    	width: 250px;
+    	height: 50px;
+  	}
+  }
