@@ -5,3 +5,18 @@
 	color: white;
 	padding-left: 30px;
 }
+  .demo-card-wide.mdl-card {
+    width: 1200px;
+  }
+  .demo-card-wide > .mdl-card__title {
+    color: #fff;
+    height: 176px;
+    background: url('http://i.imgur.com/jIqriao.gif') center / cover;
+  }
+  .demo-card-wide > .mdl-card__menu {
+    color: #fff;
+  }
+  .posts{
+  	padding-top: 30px;
+  	padding-left: 30px;
+  }
