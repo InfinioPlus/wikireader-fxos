@@ -1,8 +1,7 @@
-.waterfall-demo-header-nav .mdl-navigation__link:last-of-type  {
-  padding-right: 0;
-}
-.wiki{
+
+.wiki,.textfield-demo{
 	font-family: 'Poiret One', cursive;
-	font-size: 35px;
-	text-align: center;
+	font-size: 20px;
+	color: white;
+	padding-left: 30px;
 }
