@@ -1,37 +1,19 @@
-.wiki,.textfield-demo{
-	font-size: 20px;
-	color: white;
-	padding-left: 30px;
+body {
+  padding-top: 70px;
+  padding-bottom: 30px;
 }
-  .demo-card-wide.mdl-card {
-    width: 1200px;
-  }
-  .demo-card-wide > .mdl-card__title {
-    color: #fff;
-    height: 176px;
-    background: url('http://i.imgur.com/jIqriao.gif') repeat;
-  }
-  .demo-card-wide > .mdl-card__menu {
-    color: #fff;
-  }
-  .posts{
-  	padding-top: 30px;
-  	padding-left: 80px;
-  }
-  h3{
-  	font-family: 'Poiret One', cursive;
-  	padding-left: 180px;
-  }
-  @media(max-width: 500px) {  	
-  	.posts{
-    	padding-left: 30px;
-    	width: 250px;
-    	height: 50px; 
-  	}
-  	.search{
-  		display: none;
-  	}
-  	.wiki,.textfield-demo{
-  		padding-left: 0px;
-  	}
-  }
+
+.theme-dropdown .dropdown-menu {
+  position: static;
+  display: block;
+  margin-bottom: 20px;
+}
+
+.theme-showcase > p > .btn {
+  margin: 5px 0;
+}
+
+.theme-showcase .navbar .container {
+  width: auto;
+}
+  font-family: 'Poiret One', cursive;
