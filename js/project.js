@@ -22,6 +22,21 @@ $(document).ready(function(){
             clearTimeout(wikiRequestTimeout);
         }
     });
+    var start = true;
+    $('#rem-btn').click(function(){
+    	if(start){
+	    	$('#rem-btn').removeClass('btn-danger').addClass('btn-warning');
+	    	$('#glyph').removeClass('glyphicon-remove-circle').addClass('glyphicon-align-justify');
+	    	start = false;
+	    }
+	    else
+	    {
+	    	$('#rem-btn').removeClass('btn-warning').addClass('btn-danger');
+	    	$('#glyph').removeClass('glyphicon-align-justify').addClass('glyphicon-remove-circle');	
+	    	start = true;
+	    }
+    });
+    
 		
 
 });
