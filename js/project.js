@@ -30,26 +30,27 @@ $(document).ready(function(){
         }
     });
     var start = true;
-    $('#wrapper').hide();
+    // $('#wrapper').hide();
+    $('#wrapper').addClass("toggled");
     $('#rem-btn').click(function(){
     	if(start){
-	    	$('#rem-btn').removeClass('btn-warning').addClass('btn-danger');
-	    	$('#glyph').removeClass('glyphicon-align-justify').addClass('glyphicon-remove-circle');
 	    	start = false;
-	    	$('#wrapper').show();
+	    	$("#wrapper").toggleClass("toggled");
 	    }
 	    else
 	    {
-	    	$('#rem-btn').removeClass('btn-danger').addClass('btn-warning');
-	    	$('#glyph').removeClass('glyphicon-remove-circle').addClass('glyphicon-align-justify');	
 	    	start = true;
-	    	$('#wrapper').hide();
+	    	$("#wrapper").toggleClass("toggled");
 	    }
     });
-    /*$("#menu-toggle").click(function(e) {
-        e.preventDefault();
-        $("#wrapper").toggleClass("toggled");
-    });*/
-		
+    $(window).resize(function(){
+        if ($(window).width() < 800) {
+            $("#wrapper").hide();
+    	}
+    	else
+    	{
+    		$("#wrapper").show();
+    	}
+    });
 
 });
