@@ -35,7 +35,6 @@ $(document).ready(function(){
     // $('#wrapper').hide();
     $('#wrapper').addClass("toggled");
     $('#rem-btn').click(function(){
-        alert("UJNASFKLASF");
     	if(start){
 	    	start = false;
 	    	$("#wrapper").toggleClass("toggled");
