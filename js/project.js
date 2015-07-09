@@ -45,15 +45,4 @@ $(document).ready(function(){
 	    	$("#wrapper").toggleClass("toggled");
 	    }
     });
-    
-    $(window).resize(function(){
-        if ($(window).width() < 800) {
-            $("#wrapper").hide();
-    	}
-    	else
-    	{
-    		$("#wrapper").show();
-    	}
-    });
-
 });
