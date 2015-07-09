@@ -15,7 +15,8 @@ body {
 	font-size: 30px;
 }
 .search{
-	position: relative;
+	padding-top: 10px;
+	margin:0 auto;
 }
 #menu-btn {
     height: 90px;
@@ -129,6 +130,17 @@ body {
     }
 }
 /* Sidebar Styles End*/
+@media(max-width: 800px){
+	#menu-toggle{
+		display: none;
+		padding-left: 10px;
+	}
+	.search{
+		margin:-50px;
+		margin-left: -20px;
+		margin-right: -50px;
+	}
+}
 #menu-toggle{
 	float: left;
 	position: relative;
