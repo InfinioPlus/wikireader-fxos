@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 
-	<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -17,27 +17,23 @@
 
     <!-- Fixed navbar -->
     <nav class="navbar navbar-inverse navbar-fixed-top">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <div id="menu-toggle"><a href="#menu-toggle" class="btn btn-warning" id="rem-btn"><span class=" glyphicon glyphicon-align-justify" aria-hidden="true" id="glyph"></span></a></div>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="search">
+                    <div class="col-sm-1 col-xs-2">
+                        <a href="#menu-toggle" class="btn btn-warning" id="rem-btn"><span class=" glyphicon glyphicon-align-justify" aria-hidden="true" id="glyph"></span></a>
+                    </div>
+                    <div class="col-sm-11 col-xs-10">
+                        <div class="input-group">
+                          <input type="text" class="form-control" placeholder="Search wiki.." id="query">
+                          <span class="input-group-btn">
+                            <button class="btn btn-primary" type="button" id="go">Go!</button>
+                          </span>
+                        </div><!-- /input-group -->
+                    </div><!-- /.col-lg-6 -->
+                </div>
+            </div>
         </div>
-	        <div class="search">
-	          <div class="col-lg-6">
-			    <div class="input-group">
-			      <input type="text" class="form-control" placeholder="Search wiki.." id="query">
-			      <span class="input-group-btn">
-			        <button class="btn btn-primary" type="button" id="go">Go!</button>
-			      </span>
-			    </div><!-- /input-group -->
-			  </div><!-- /.col-lg-6 -->
-	        </div>
-      </div>
     </nav>
     <div id="wrapper">
         <!-- Sidebar -->

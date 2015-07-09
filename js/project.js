@@ -24,15 +24,18 @@ $(document).ready(function(){
 	        }
 	    });
 	});
+    
 	$('#query').keypress(function(e){
         if(e.which == 13){//Enter key pressed
             $('#go').click();//Trigger search button click event
         }
     });
+    
     var start = true;
     // $('#wrapper').hide();
     $('#wrapper').addClass("toggled");
     $('#rem-btn').click(function(){
+        alert("UJNASFKLASF");
     	if(start){
 	    	start = false;
 	    	$("#wrapper").toggleClass("toggled");
@@ -43,6 +46,7 @@ $(document).ready(function(){
 	    	$("#wrapper").toggleClass("toggled");
 	    }
     });
+    
     $(window).resize(function(){
         if ($(window).width() < 800) {
             $("#wrapper").hide();
