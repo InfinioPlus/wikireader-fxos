@@ -1,26 +1,25 @@
 $(document).ready(function(){
 
 	$('#go').click(function(){
-		var $wikiElem = $('#posts');
+		var $wikiElem = $('#search-results');
 		var query = $('#query').val();
 		
-	 	var wikiurl = 'http://en.wikipedia.org/w/api.php?format=json&action=opensearch&search=';
-	    var wikiUrl = wikiurl + query;
-
-	    var wikiRequestTimeout = setTimeout(function(){
-	        $wikiElem.text('Could not load wikipedia links');
-	    }, 8000);
+	 	var wikiurl = 'http://en.wikipedia.org/w/api.php?action=query&list=search&format=json&srsearch=' + $('#query').val();
 
 	    $.ajax({
-	        url: wikiUrl,
+	        url: wikiurl,
 	        dataType: "jsonp",
 	        success: function(data){
-	            for (var i = 0; i <= data[1].length - 1; i++) {
-	                var pageLink = '<li><a href="' + data[3][i] + '">' + data[1][i] + '</a></li>';
+	            for (var i = 0; i <= data.query.search.length; i++) {
+                    var element = '';
+                    element += '<div class="row rw1"><div class="col-xs-12 col1 well" id="posts">';
+                    element += '<h4>' + data.query.search[i].titlte +'</h4>';
+                    element += '<p>' + data.query.search[i].snippet + '</p>';
+                    element += '<button class="btn btn-success">Read More..</button>';
+                    element += '</div></div><hr>';
+                    
 	                $wikiElem.append(pageLink);
 	            };
-
-	            clearTimeout(wikiRequestTimeout);
 	        }
 	    });
 	});
