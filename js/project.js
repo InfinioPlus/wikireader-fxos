@@ -56,7 +56,7 @@ $(document).ready(function(){
         var intro_url = 'https://en.wikipedia.org/w/api.php?format=json&action=query&prop=extracts&exintro=&explaintext=&titles=' + page;
         
         displayIntro(intro_url);
-        makeSidebar(intro_url, sections_url);
+        makeSidebar(intro_url, sections_url, page);
     }
     
     function displayIntro(intro_url){
@@ -75,7 +75,34 @@ $(document).ready(function(){
         });
     }
     
-    function makeSidebar(intro_url, sections_url){
+    function makeSidebar(intro_url, sections_url, page){
+        $('#sidebar-content').empty();
+        
+        var section_ids = ['intro-section'];
+        var sidebar_html = '<li class="sidebar-brand"><a href="#" class="sd">Wikipedia</a></li>';
+        
+        // Adding main page (intro section)
+        sidebar_html += '<li>';
+        sidebar_html += '   <a href="#" id="intro-section>Main</a>"';
+        sidebar_html += '</li>';
+        
+        $.ajax({
+            url: sections_url,
+            dataType: "jsonp",
+            success: function(data){
+                for (var i=0; i<data.parse.sections.length; i++){
+                    var section_id = 'section-' + data.parse.sections[i].index;
+                    
+                    sidebar_html += '<li>';
+                    sidebar_html += '   <a href="#" id="' + section_id + '">' + data.parse.sections[i].number + ' ' + data.parse.sections[i].line + '</a>';
+                    sidebar_html += '</li>';
+                    
+                    section_ids.push(section_id);
+                }
+                
+                $('#sidebar-content').append(sidebar_html);
+            }
+        });
     }
 
     var start = true;
