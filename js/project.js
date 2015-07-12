@@ -26,12 +26,15 @@ $(document).ready(function(){
 
                     $('#search-results').append(element);
                     
+                    var title = data.query.search[i].title;
                     // Adding click listener to dinamically added buttons (with closures)
                     (
                         function(){
                             var id=i;
+                            var page=title;
+                            
                             $('#read-' + id).click(function(){
-                                alert('Called read-' + id);
+                                displayPage(page);
                             });
                         }
                     )();
@@ -47,6 +50,25 @@ $(document).ready(function(){
             $('#go').click();
         }
     });
+    
+    function displayPage(page){
+        var sections_url = 'http://en.wikipedia.org/w/api.php?action=parse&prop=sections&format=json&page=' + page;
+        var intro_url = 'https://en.wikipedia.org/w/api.php?format=json&action=query&prop=extracts&exintro=&explaintext=&titles=' + page;
+        
+        $.ajax({
+            url: intro_url,
+            dataType: "jsonp",
+            success: function(data){
+                // Trick: get page number using for each
+                var el;
+                for (el in data.query.pages){
+                    // TODO: display data as "main page"
+                    var title = data.query.pages[el].title;
+                    var text = data.query.pages[el].extract;
+                }
+            }
+        });
+    }
 
     var start = true;
     // $('#wrapper').hide();
