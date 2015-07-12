@@ -55,6 +55,11 @@ $(document).ready(function(){
         var sections_url = 'http://en.wikipedia.org/w/api.php?action=parse&prop=sections&format=json&page=' + page;
         var intro_url = 'https://en.wikipedia.org/w/api.php?format=json&action=query&prop=extracts&exintro=&explaintext=&titles=' + page;
         
+        displayIntro(intro_url);
+        makeSidebar(intro_url, sections_url);
+    }
+    
+    function displayIntro(intro_url){
         $.ajax({
             url: intro_url,
             dataType: "jsonp",
@@ -68,6 +73,9 @@ $(document).ready(function(){
                 }
             }
         });
+    }
+    
+    function makeSidebar(intro_url, sections_url){
     }
 
     var start = true;
