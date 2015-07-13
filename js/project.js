@@ -78,7 +78,7 @@ $(document).ready(function(){
     function makeSidebar(intro_url, sections_url, page){
         $('#sidebar-content').empty();
         
-        var section_ids = ['intro-section'];
+        var section_ids = [];
         var sidebar_html = '<li class="sidebar-brand"><a href="#" class="sd">Wikipedia</a></li>';
         
         // Adding main page (intro section)
@@ -101,8 +101,39 @@ $(document).ready(function(){
                 }
                 
                 $('#sidebar-content').append(sidebar_html);
+                addAjaxCalls(page, section_ids);
             }
         });
+    }
+    
+    function addAjaxCalls(page, section_ids){
+        for (var i=0; i<section_ids.length; i++){
+            (
+                function(){
+                    var id = section_ids[i];
+                    var section_page = page;
+                    var index = section_ids[i].split('-')[1];
+                    
+                    $('#' + id).click(function(){
+                        var section_url = 'https://en.wikipedia.org/w/api.php?format=json&action=parse&prop=text&disabletoc=true&disableeditsection=true&page=' + section_page + '&section=' + index;
+                        
+                        $.ajax({
+                            url: section_url,
+                            dataType: "jsonp",
+                            success: function(data){
+                                // Trick: get element identifier using for each
+                                var el;
+                                for (el in data.parse.text){
+                                    // TODO: display data
+                                    var html = data.parse.text[el];
+                                    alert(html);
+                                }
+                            }
+                        });
+                    });
+                }
+            )();
+        }
     }
 
     var start = true;
