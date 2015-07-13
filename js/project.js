@@ -125,8 +125,12 @@ $(document).ready(function(){
                                 var el;
                                 for (el in data.parse.text){
                                     // TODO: display data
-                                    var html = data.parse.text[el];
-                                    alert(html);
+                                    var html = '<div class="row rw1"><div class="col-xs-12 col1 well" id="posts">';
+                                    html += data.parse.text[el]
+                                    html += '</div></div>';                                    
+                                    $('#search-results').empty();
+                                    $('#search-results').append(html);
+                                    //alert(html);
                                 }
                             }
                         });
