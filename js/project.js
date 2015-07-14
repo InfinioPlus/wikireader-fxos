@@ -70,6 +70,13 @@ $(document).ready(function(){
                     // TODO: display data as "main page"
                     var title = data.query.pages[el].title;
                     var text = data.query.pages[el].extract;
+                    
+                    var html = '<div class="row rw1"><div class="col-xs-12 col1 well" id="posts">';
+                    html += '<h1>' + title + '</h1>';
+                    html += '<p>' + text + '</p>';
+                    html += '</div></div>';                                    
+                    $('#search-results').empty();
+                    $('#search-results').append(html);
                 }
             }
         });
