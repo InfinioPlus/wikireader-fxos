@@ -1,4 +1,4 @@
 # wiki-reader
-Wikipedia Mobile for OS
+Wikipedia Mobile for Android OS
 
 [View Demo](http://infinioplus.github.io/wikireader-fxos/)
